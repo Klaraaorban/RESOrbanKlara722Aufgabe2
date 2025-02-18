@@ -12,20 +12,6 @@ public class Repo<T> {
         entities.add(entity);
     }
 
-//    public T readById(int id) {
-//        for (T entity : entities) {
-//            try {
-//                int entityId = (int) entity.getClass().getDeclaredField("id").get(entity);
-//                if (entityId == id) {
-//                    return entity;
-//                }
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        }
-//        return null;
-//    }
-
     public T readById(int id) {
         for (T entity : entities) {
             try {

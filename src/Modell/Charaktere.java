@@ -2,11 +2,11 @@ package Modell;
 
 import java.util.List;
 
-public class Charakteren {
+public class Charaktere {
     int id;
     String Name;
     String Region;
-    List<Produkten> produktens;
+    List<Produkte> produktens;
 
     @Override
     public String toString() {
@@ -42,15 +42,15 @@ public class Charakteren {
         Region = region;
     }
 
-    public List<Produkten> getProduktens() {
+    public List<Produkte> getProduktens() {
         return produktens;
     }
 
-    public void setProduktens(List<Produkten> produktens) {
+    public void setProduktens(List<Produkte> produktens) {
         this.produktens = produktens;
     }
 
-    public Charakteren(int id, String name, String region, List<Produkten> produktens) {
+    public Charaktere(int id, String name, String region, List<Produkte> produktens) {
         this.id = id;
         Name = name;
         Region = region;

@@ -1,6 +1,6 @@
 package Modell;
 
-public class Produkten {
+public class Produkte {
     int id;
     String Name;
     double Preis;
@@ -47,7 +47,7 @@ public class Produkten {
         Universum = universum;
     }
 
-    public Produkten(int id, String name, double preis, String universum) {
+    public Produkte(int id, String name, double preis, String universum) {
         this.id = id;
         Name = name;
         Preis = preis;

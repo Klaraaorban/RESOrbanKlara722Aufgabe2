@@ -1,11 +1,11 @@
-import Modell.Charakteren;
-import Modell.Produkten;
+import Modell.Charaktere;
+import Modell.Produkte;
 
 public class Controller {
-    Repo<Produkten> produktenRepo = new Repo<>();
-    Repo<Charakteren> charakterenRepo = new Repo<>();
+    Repo<Produkte> produktenRepo = new Repo<>();
+    Repo<Charaktere> charakterenRepo = new Repo<>();
 
-    public Controller(Repo<Produkten> produktenRepo, Repo<Charakteren> charakterenRepo) {
+    public Controller(Repo<Produkte> produktenRepo, Repo<Charaktere> charakterenRepo) {
         this.produktenRepo = produktenRepo;
         this.charakterenRepo = charakterenRepo;
     }
