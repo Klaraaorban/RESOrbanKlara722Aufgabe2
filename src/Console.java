@@ -29,6 +29,9 @@ public class Console {
             System.out.println("8. Update Character");
             System.out.println("9. Delete Character");
             System.out.println("10. Get all Characters");
+            System.out.println("11. Get characters by universe");
+            System.out.println("12. Get characters by product from universe");
+            System.out.println("13. Sort products of Character by by price");
 
 userChoice = scanner.nextLine();
     switch (userChoice){
@@ -50,11 +53,11 @@ userChoice = scanner.nextLine();
             System.out.println("Enter product name:");
             String productName = scanner.nextLine();
             System.out.println("Enter product price:");
-            int productPrice = scanner.nextInt();
+            double productPrice = scanner.nextDouble();
             scanner.nextLine(); // Consume newline
-            System.out.println("Enter product herkunftsregion:");
-            String productHerkunftsregion = scanner.nextLine();
-            Produkten newProduct = new Produkten(productID, productName, productPrice, productHerkunftsregion);
+            System.out.println("Enter product universe:");
+            String universe = scanner.nextLine();
+            Produkten newProduct = new Produkten(productID, productName, productPrice, universe);
             controller.produktenRepo.create(newProduct);
             System.out.println("Product created: " + newProduct);
             break;
@@ -66,7 +69,7 @@ userChoice = scanner.nextLine();
             System.out.println("Enter new product name:");
             String newProductName = scanner.nextLine();
             System.out.println("Enter new product price:");
-            int newProductPrice = scanner.nextInt();
+            double newProductPrice = scanner.nextDouble();
             scanner.nextLine(); // Consume newline
             System.out.println("Enter new product herkunftsregion:");
             String newProductHerkunftsregion = scanner.nextLine();
@@ -184,6 +187,28 @@ userChoice = scanner.nextLine();
             case "10":
             System.out.println("All characters:");
             controller.charakterenRepo.getAll().forEach(System.out::println);
+            break;
+
+
+            case "11":
+            System.out.println("Enter universe:");
+            String universe11 = scanner.nextLine();
+            controller.filterByUniversum(universe11);
+            break;
+
+            case "12":
+            System.out.println("Enter universe:");
+            String universe1 = scanner.nextLine();
+            controller.filterByProductUniversum(universe1);
+            break;
+
+
+            case "13":
+            System.out.println("Enter character name:");
+            String characterName3 = scanner.nextLine();
+            System.out.println("Enter order (asc/desc):");
+            String order = scanner.nextLine();
+            controller.sortProductsByPrice(characterName3, order);
             break;
 
     }

@@ -42,7 +42,7 @@ public class Controller {
                 .findFirst()
                 .ifPresent(charakteren -> {
                     charakteren.getProduktens().stream()
-                            .sorted((p1, p2) -> order.equals("asc") ? p1.getPreis() - p2.getPreis() : p2.getPreis() - p1.getPreis())
+                            .sorted((p1, p2) -> order.equals("asc") ? Double.compare(p1.getPreis(), p2.getPreis()) : Double.compare(p2.getPreis(), p1.getPreis()))
                             .forEach(System.out::println);
                 });
 

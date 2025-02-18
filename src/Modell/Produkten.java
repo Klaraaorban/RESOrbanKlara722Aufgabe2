@@ -3,7 +3,7 @@ package Modell;
 public class Produkten {
     int id;
     String Name;
-    int Preis;
+    double Preis;
     String Universum;
 
     @Override
@@ -32,14 +32,13 @@ public class Produkten {
         Name = name;
     }
 
-    public int getPreis() {
+    public double getPreis() {
         return Preis;
     }
 
-    public void setPreis(int preis) {
+    public void setPreis(double preis) {
         Preis = preis;
     }
-
     public String getUniversum() {
         return Universum;
     }
@@ -48,7 +47,7 @@ public class Produkten {
         Universum = universum;
     }
 
-    public Produkten(int id, String name, int preis, String universum) {
+    public Produkten(int id, String name, double preis, String universum) {
         this.id = id;
         Name = name;
         Preis = preis;
