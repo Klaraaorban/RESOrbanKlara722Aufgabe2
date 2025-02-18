@@ -10,7 +10,7 @@ public class Controller {
         this.charakterenRepo = charakterenRepo;
     }
 
-//    Filtern nach Ursprungsuniversum (0.5 Punkte)
+    //    Filtern nach Ursprungsuniversum (0.5 Punkte)
 //Der Benutzer kann sich nur die Charaktere aus einem bestimmten Region anzeigen lassen.
     public void filterByUniversum(String universum) {
         charakterenRepo.getAll().stream()
@@ -31,6 +31,21 @@ public class Controller {
     }
 
 
+    //    Sortieren der Produkte eines Charakters nach Preis (1 Punkt)
+//Der Benutzer wählt einen Charakter und gibt die Sortierart ein:
+//- Aufsteigend (günstigster zuerst)
+//- Absteigend (teuerster zuerst)
+
+    public void sortProductsByPrice(String charakterName, String order) {
+        charakterenRepo.getAll().stream()
+                .filter(charakteren -> charakteren.getName().equals(charakterName))
+                .findFirst()
+                .ifPresent(charakteren -> {
+                    charakteren.getProduktens().stream()
+                            .sorted((p1, p2) -> order.equals("asc") ? p1.getPreis() - p2.getPreis() : p2.getPreis() - p1.getPreis())
+                            .forEach(System.out::println);
+                });
+
 
     }
-
+}
