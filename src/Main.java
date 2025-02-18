@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        //finish
         Repo<Produkte> produktenRepo = new Repo<>();
         Repo<Charaktere> charakterenRepo = new Repo<>();
         Controller controller = new Controller(produktenRepo, charakterenRepo);
